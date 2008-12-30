@@ -2,7 +2,7 @@ class Posts < Application
   # provides :xml, :yaml, :js
 
   before :ensure_authenticated, :exclude => [:index, :show]
-  
+
   def index
     @posts = Post.all
     display @posts
@@ -22,7 +22,9 @@ class Posts < Application
 
   def edit(id)
     only_provides :html
-    show(id)
+    @post = Post.get(id)
+    raise NotFound unless @post
+    display @post
   end
 
   def create(post)

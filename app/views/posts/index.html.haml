@@ -1,7 +1,5 @@
 - throw_content(:content_title, "Posts controller, index action")
 - @posts.each do |post|
-  %p
-    = fields_for post do
-      = text_field :title
-      = text_area :content
+  = fields_for post do
+    = partial :form
 = link_to "New", url(:new_post)

@@ -1,10 +1,6 @@
 - throw_content(:content_title, "Posts controller, edit action")
 = error_messages_for @post
-
 = form_for(@post, :action => url(:post, @post)) do
-  %p
-    = submit "Update"
-
-= link_to 'Show', url(:post, @post)
-|
+  = partial :form
+  = submit "Update"
 = link_to 'Index', url(:posts)

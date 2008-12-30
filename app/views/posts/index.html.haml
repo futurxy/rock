@@ -1,8 +1,7 @@
 - throw_content(:content_title, "Posts controller, index action")
-%p
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
-  %br
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
-  %br
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
+- @posts.each do |post|
+  %p
+    = fields_for post do
+      = text_field :title
+      = text_area :content
 = link_to "New", url(:new_post)

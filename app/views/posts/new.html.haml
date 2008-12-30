@@ -1,3 +1,9 @@
 - throw_content(:content_title, "Posts controller, new action")
 Putyour tings in me post-ah
+= form_for(@post, :action => resource(:posts)) do
+  = text_field :title, :label => "Title"
+  %br
+  = text_area :content, :label => "Content"
+  %br
+  = submit "Create"
 = link_to "Index", url(:posts)

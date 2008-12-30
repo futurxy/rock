@@ -1,3 +1,7 @@
 - throw_content(:content_title, "Posts controller, show action")
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
+= error_messages_for @post
+
+= fields_for @post do
+  = text_field :title, :label => "Title"
+  = text_area :content, :label => "Content"
 = link_to "Index", url(:posts)

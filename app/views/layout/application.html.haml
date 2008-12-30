@@ -1,9 +1,11 @@
 !!! Strict
-%html{ html_attrs("en_us") }
+%html{ html_attrs("en_nz") }
   %head
     %title
-      Fresh Merb App
+      = catch_content :for_title
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }/
     %link{ :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8" }/
+    = js_include_tag "jquery"
+    = catch_content :for_header
   %body
     = catch_content :for_layout

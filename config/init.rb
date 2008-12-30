@@ -20,6 +20,6 @@ Merb::BootLoader.before_app_loads do
 end
  
 Merb::BootLoader.after_app_loads do
-  User.auto_upgrade!
+  DataMapper.auto_upgrade!
   User.create(:login => "admin", :password => "changeme", :password_confirmation => "changeme") unless User.count > 0
 end

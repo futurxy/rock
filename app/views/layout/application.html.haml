@@ -2,10 +2,30 @@
 %html{ html_attrs("en_nz") }
   %head
     %title
-      = catch_content :for_title
+      Rock
+      = catch_content :title
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }/
     %link{ :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8" }/
-    = js_include_tag "jquery"
-    = catch_content :for_header
+    = js_include_tag "jquery", "jquery.livequery", "application"
+    = catch_content :header
   %body
-    = catch_content :for_layout
+    #container
+      #top
+        %h1= Merb::Config[:blog_title]
+      #leftnav
+        %ul
+          Archives
+          %li March
+          %li December
+        = link_to "RSS", url(:posts, :format => "rss")
+      #content
+        - unless message.empty?
+          #message= message[:notice]
+        %h2= catch_content :content_title
+        = catch_content :for_layout
+      #footer
+        Powered by
+        = link_to "Rock", 'http://rock.junglist.gen.nz'
+        a lightweight Merb+Datamapper+jQuery blogging engine
+        
+        = link_to "Admin Email", "mailto:#{Merb::Config[:blog_admin_email]}"

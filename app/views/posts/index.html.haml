@@ -1,16 +1,8 @@
-%h1
-  Posts controller, index action
+- throw_content(:content_title, "Posts controller, index action")
 %p
-  Edit this file in
-  %tt
-    app/views/posts/index.html.erb
-%table
-  %tr
-  - for post in @posts
-    %tr
-      %td
-        = link_to 'Show', url(:post, post)
-      %td
-        = link_to 'Edit', url(:edit_post,  post)
-
-= link_to 'New', url(:new_post)
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
+  %br
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
+  %br
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
+= link_to "New", url(:new_post)
